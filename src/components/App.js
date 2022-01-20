@@ -6,9 +6,10 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import Home from './Home';
 import Maid from './Maid';
-import Waifu from './Waifu';
+// import Waifu from './Waifu';
 
 function App() {
+
   return (
     <div className="App">
       <div className='header'>
@@ -17,7 +18,7 @@ function App() {
     
     <Switch>
       <Route path='/home/waifu'>
-        <Waifu />
+        {/* <Waifu /> */}
       </Route>
 
       <Route path='/home/maid'>
@@ -35,5 +36,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

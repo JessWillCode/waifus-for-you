@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default function Home() {
+
+    
+
     return (
         <div className='homeScreen'>
             <div className='title'>
@@ -8,8 +13,8 @@ export default function Home() {
                 <h4>Choose your Type to get Started</h4>
             </div>
             <div className='buttons'>
-                <button className='maid'>Maid</button>
-                <button className='waifu'>Waifu</button>
+                <Link to='/home/maid' className='maid-btn'>Maid</Link>
+                {/* <Link to='/home/waifu' className='waifu-btn'>Waifu</Link> */}
             </div>
         </div>
     )

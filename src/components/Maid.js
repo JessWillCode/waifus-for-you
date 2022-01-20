@@ -1,19 +1,32 @@
 import React from 'react';
-import Header from './Header';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default function Maid() {
+const Maid = (props) => {
+    const { maid, isFetching, error } = props;
+console.log(props);
     return (
         <div>
             <div className='left'>
                 <h1>Here's your Maid!</h1>
-                <h2>Source:</h2>
-                <h2>Likes:</h2>
-                <button><img src='src/assets/kisspng-teal-heart-clip-art-turquoise-5abba0ed0d59c5.2516532615222458690547.png' />Get New Maid</button>
-                <button><img src='src/assets/kisspng-teal-heart-clip-art-turquoise-5abba0ed0d59c5.2516532615222458690547.png' />Let's Go Back</button>
+                <h2>Source: {maid.source}</h2>
+                <h2>Likes:{maid.likes}</h2>
+                <button>Get New Maid</button>
+                <Link to='/home'>Let's Go Back</Link>
             </div>
             <div className='right'>
-                <img />
+                <img width='200' src={maid.img}/>
             </div>
         </div>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+        maid: state.maid.maid,
+        isFetching: state.isFetching,
+        error: state.error
+    }
+}
+
+export default connect(mapStateToProps)(Maid);
