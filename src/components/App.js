@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../src/App.css';
+import '../../src/index.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -12,9 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className='header'>
         <Header />
-      </div>
     
     <Switch>
       <Route path='/home/waifu'>

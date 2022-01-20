@@ -4,7 +4,7 @@ const initialState = {
     maid:{
         url: '', 
         source: '',
-        likes: 0
+        like: 0
     },
     isFetching: false,
     error: ''

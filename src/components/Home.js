@@ -13,7 +13,7 @@ export default function Home() {
                 <h4>Choose your Type to get Started</h4>
             </div>
             <div className='buttons'>
-                <Link to='/home/maid' className='maid-btn'>Maid</Link>
+                <Link className='btn' to='/home/maid'>Maid</Link>
                 {/* <Link to='/home/waifu' className='waifu-btn'>Waifu</Link> */}
             </div>
         </div>

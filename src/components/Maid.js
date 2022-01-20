@@ -25,16 +25,18 @@ const Maid = (props) => {
     }
 
     return (
-        <div>
+        <div className='container'>
             <div className='left'>
                 <h1>Here's your Maid!</h1>
                 <h2>Source: {maid.source}</h2>
-                <h2>Likes:{maid.likes}</h2>
-                <button onClick={handleClick}>Get New Maid</button>
-                <Link to='/home'>Let's Go Back</Link>
+                <h2>Likes:{maid.like}</h2>
+                <div className='buttons'>
+                    <button onClick={handleClick} className='btn'>Get New Maid</button>
+                    <Link className='btn' to='/home'>Go Back</Link>
+                </div>
             </div>
             <div className='right'>
-                <img width='200' src={maid.url}/>
+                <img className='maid' src={maid.url}/>
             </div>
         </div>
     )
