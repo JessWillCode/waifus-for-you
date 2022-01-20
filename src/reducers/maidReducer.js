@@ -2,7 +2,7 @@ import { FETCH_START, FETCH_FAIL, FETCH_SUCCESS } from "../actions/maidActions";
 
 const initialState = {
     maid:{
-        img: '', 
+        url: '', 
         source: '',
         likes: 0
     },

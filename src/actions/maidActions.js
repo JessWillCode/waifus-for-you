@@ -8,10 +8,10 @@ export const getMaid = () => (dispatch) => {
     dispatch(fetchStart());
     axios.get('https://api.waifu.im/sfw/maid/')
     .then(res => {
-        console.log(res);
+        dispatch(fetchSuccess(res.data.images[0]));
     })
     .catch(err => {
-        console.log(err);
+        dispatch(fetchFail(err));
     })
 }
 

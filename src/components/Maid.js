@@ -16,8 +16,8 @@ const Maid = (props) => {
         return <h2>Oopsies! We had a hiccup: {error}</h2>
     }
 
-    if(isFetching) {
-        return <Loading />;
+    if(isFetching === true) {
+        return <h2>Fetching your Maid...</h2>;
     }
 
     const handleClick = () => {
@@ -34,7 +34,7 @@ const Maid = (props) => {
                 <Link to='/home'>Let's Go Back</Link>
             </div>
             <div className='right'>
-                <img width='200' src={maid.img}/>
+                <img width='200' src={maid.url}/>
             </div>
         </div>
     )
