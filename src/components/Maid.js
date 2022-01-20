@@ -31,7 +31,7 @@ const Maid = (props) => {
                 <h2>Source: {maid.source}</h2>
                 <h2>Likes:{maid.like}</h2>
                 <div className='buttons'>
-                    <button onClick={handleClick} className='btn'>Get New Maid</button>
+                    <button onClick={handleClick} className='btn maid-btn'>Get New Maid</button>
                     <Link className='btn' to='/home'>Go Back</Link>
                 </div>
             </div>

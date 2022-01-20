@@ -40,7 +40,7 @@ nav {
 
 * {
   text-align: center;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 html {
@@ -127,22 +127,28 @@ button {
 .left h1 {
   width: 100%;
   padding: 2%;
+  margin-bottom: 5%;
 }
 
 .left h2 {
   margin-top: 5%;
 }
 
+.buttons {
+  width: 30%;
+  margin: 10% auto;
+  height: 30vh;
+}
+
 .left .btn {
   width: 100%;
   align-items: center;
   text-align: center;
-  padding: 2%;
 }
 
-.buttons {
-  width: 50%;
-  margin: 10% auto;
+.maid-btn {
+  margin-top: 20%;
+  margin-bottom: 50%;
 }
 
 .right {
@@ -150,7 +156,7 @@ button {
 }
 
 .right .maid {
-  width: 50%;
-  margin-top: 10%;
+  width: 80%;
   margin-left: 5%;
+  margin-bottom: 10%;
 }
