@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { getMaid } from '../actions/maidActions';
+
+import Loading from './Loading';
 
 const Maid = (props) => {
-    const { maid, isFetching, error } = props;
-console.log(props);
+    const { maid, isFetching, error, dispatch } = props;
+
+    useEffect(() => {
+        dispatch(getMaid());
+    }, []);
+
+    if(error) {
+        return <h2>Oopsies! We had a hiccup: {error}</h2>
+    }
+
+    if(isFetching) {
+        return <Loading />;
+    }
+
+    const handleClick = () => {
+        dispatch(getMaid());
+    }
+
     return (
         <div>
             <div className='left'>
                 <h1>Here's your Maid!</h1>
                 <h2>Source: {maid.source}</h2>
                 <h2>Likes:{maid.likes}</h2>
-                <button>Get New Maid</button>
+                <button onClick={handleClick}>Get New Maid</button>
                 <Link to='/home'>Let's Go Back</Link>
             </div>
             <div className='right'>

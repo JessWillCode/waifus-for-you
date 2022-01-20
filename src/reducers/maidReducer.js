@@ -2,9 +2,9 @@ import { FETCH_START, FETCH_FAIL, FETCH_SUCCESS } from "../actions/maidActions";
 
 const initialState = {
     maid:{
-        img: 'https://cdn.waifu.im/a29428efa0ba351e.jpeg', 
-        source: 'https://reddit.com/jd9hmn/',
-        likes: 5
+        img: '', 
+        source: '',
+        likes: 0
     },
     isFetching: false,
     error: ''
@@ -12,7 +12,24 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        
+        case FETCH_START:
+            return{
+                ...state,
+                maid: {},
+                isFetching: true
+            };
+        case FETCH_SUCCESS:
+            return {
+                ...state,
+                maid: action.payload
+            };
+        case FETCH_FAIL:
+            return{
+                ...state,
+                maid:{},
+                isFetching:false,
+                error: action.payload
+            };
         default:
             return state;
     }
