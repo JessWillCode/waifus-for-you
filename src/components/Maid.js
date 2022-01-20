@@ -4,9 +4,6 @@ import Header from './Header';
 export default function Maid() {
     return (
         <div>
-            <div className='header'>
-                <Header />            
-            </div>
             <div className='left'>
                 <h1>Here's your Maid!</h1>
                 <h2>Source:</h2>

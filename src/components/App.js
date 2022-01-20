@@ -1,6 +1,12 @@
 import React from 'react';
-import Header from './Header';
 import '../../src/App.css';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import Header from './Header';
+import Home from './Home';
+import Maid from './Maid';
+import Waifu from './Waifu';
 
 function App() {
   return (
@@ -8,14 +14,24 @@ function App() {
       <div className='header'>
         <Header />
       </div>
-      <div className='title'>
-        <h1>Ready for Waifus?</h1>
-        <h4>Choose your Type to get Started</h4>
-      </div>
-      <div classname='buttons'>
-      <button className='maid'>Maid</button>
-      <button className='waifu'>Waifu</button>
-      </div>
+    
+    <Switch>
+      <Route path='/home/waifu'>
+        <Waifu />
+      </Route>
+
+      <Route path='/home/maid'>
+        <Maid />
+      </Route>
+
+      <Route path='/home'>
+        <Home />
+      </Route>
+
+      <Route path='/'>
+        <Redirect to='/home'/>
+      </Route>
+    </Switch>
     </div>
   );
 }
